@@ -187,66 +187,66 @@ original_slug: Aprender/HTML/Tables/Basics
 
 <h3 id="When_should_you_NOT_use_HTML_tables">Quando NÃO utilizar tabelas HTML?</h3>
 
-<p>HTML tables should be used for tabular data — this is what they are designed for. Unfortunately, a lot of people used to use HTML tables to lay out web pages, e.g. one row to contain the header, one row to contain the content columns, one row to contain the footer, etc. You can find more details and an example at <a href="/en-US/docs/Learn/Accessibility/HTML#Page_layouts">Page Layouts</a> in our <a href="/en-US/docs/Learn/Accessibility">Accessibility Learning Module</a>. This was commonly used because CSS support across browsers used to be terrible; table layouts are much less common nowadays, but you might still see them in some corners of the web.</p>
+<p>Tabelas HTML devem ser usadas para tabular dados — é para isso que elas são projetadas. Infelizmente, muitas pesssoas costumavam utilizar tabelas para formatar páginas HTML, por exemplo, uma linha contendo o cabeçalho, uma linha contento o conteúdo das colunas, uma linha contendo o rodapé da página, etc. Você pode encontrar mais detalhes e um exemplo em <a href="/en-US/docs/Learn/Accessibility/HTML#Page_layouts">Layouts de página</a> em nosso <a href="/en-US/docs/Learn/Accessibility">Módulo de Aprendizagem de Acessibilidade</a>. Isto era comumente utilizado porque o suporte a CSS entre os navegadores costumava ser terrível; Layotus de página baseados em tabelas são muito menos comuns hoje em dia, mas você ainda deve ver isso em algumas bordas da web.</p>
 
-<p>In short, using tables for layout rather than <a href="/en-US/docs/Learn/CSS/CSS_layout">CSS layout techniques</a> is a bad idea. The main reasons are as follows:</p>
+<p>Basicamente, utilizar tabelas para desenhar páginas ao invés de <a href="/en-US/docs/Learn/CSS/CSS_layout">Técnicas de Layout CSS</a> é uma má idéia. As principais razões são as a seguir:</p>
 
 <ol>
- <li><strong>Layout tables reduce accessibility for visually impaired users</strong>: <a href="/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Accessibility#Screenreaders">Screenreaders</a>, used by blind people, interpret the tags that exist in an HTML page and read out the contents to the user. Because tables are not the right tool for layout, and the markup is more complex than with CSS layout techniques, the screenreaders' output will be confusing to their users.</li>
- <li><strong>Tables produce tag soup</strong>: As mentioned above, table layouts generally involve more complex markup structures than proper layout techniques. This can result in the code being harder to write, maintain, and debug.</li>
- <li><strong>Tables are not automatically responsive</strong>: When you use proper layout containers (such as {{htmlelement("header")}}, {{htmlelement("section")}}, {{htmlelement("article")}}, or {{htmlelement("div")}}), their width defaults to 100% of their parent element. Tables on the other hand are sized according to their content by default, so extra measures are needed to get table layout styling to effectively work across a variety of devices.</li>
+ <li><strong>Um layout baseado em tabelas reduz a acessibilidade para usuários com baixa visão</strong>: <a href="/en-US/docs/Learn/Tools_and_testing/Cross_browser_testing/Accessibility#Screenreaders">Leitores de telas</a>, utilizado por deficientes visuais, interpretam as tags existentes em uma página HTML e lêem o conteúdo para o usuário. Por conta de tabelas não serem a ferramenta certa para criar layouts, e a marcação ser mais complexa do que com técnicas CSS, as saídas de leitores de tela serão confusas para seus usuários.</li>
+ <li><strong>Tabelas produzem uma sopa de tags</strong>: Como mencionado acima, layouts baseados em tabelas geralmente envolvem estruturas de marcação mais complexas do que técnicas de layouts adequadas. Isso pode resultar em um código que seja mais difícil de escrever, dar manutenção, e analisar.</li>
+ <li><strong>Tabelas não são automaticamente responsivas</strong>: Quando você usa contêineres de layout adequados (tais como {{htmlelement("header")}}, {{htmlelement("section")}}, {{htmlelement("article")}}, ou {{htmlelement("div")}}), sua largura padrão é de 100% de seu elemento pai. Tabelas por outro lado são desenhadas de acordo com o seu conteúdo padrão, portanto, medidas extras são necessárias para que a estilização do layout da tabela funcione efetivamente em uma variedade de dispositivos.</li>
 </ol>
 
-<h2 id="Active_learning_Creating_your_first_table">Active learning: Creating your first table</h2>
+<h2 id="Active_learning_Creating_your_first_table">Aprendendo na prática: Criando sua primeira tabela</h2>
 
-<p>We've talked table theory enough, so, let's dive into a practical example and build up a simple table.</p>
+<p>Nós falamos o suficiente de tabelas na teoria, então, vamos mergulhar em um exemplo prático e construir uma tabela simples.</p>
 
 <ol>
- <li>First of all, make a local copy of <a href="https://github.com/mdn/learning-area/blob/master/html/tables/basic/blank-template.html">blank-template.html</a> and <a href="https://github.com/mdn/learning-area/blob/master/html/tables/basic/minimal-table.css">minimal-table.css</a> in a new directory on your local machine.</li>
- <li>The content of every table is enclosed by these two tags : <strong><code><a href="/en-US/docs/Web/HTML/Element/table">&lt;table&gt;&lt;/table&gt;</a></code></strong>. Add these inside the body of your HTML.</li>
- <li>The smallest container inside a table is a table cell, which is created by a <strong><code><a href="/en-US/docs/Web/HTML/Element/td">&lt;td&gt;</a></code></strong> element ('td' stands for 'table data'). Add the following inside your table tags:
-  <pre class="brush: html notranslate">&lt;td&gt;Hi, I'm your first cell.&lt;/td&gt;</pre>
+ <li>Antes de tudo, faça uma cópia local do <a href="https://github.com/mdn/learning-area/blob/master/html/tables/basic/blank-template.html">blank-template.html</a> e <a href="https://github.com/mdn/learning-area/blob/master/html/tables/basic/minimal-table.css">minimal-table.css</a> e um novo diretório na sua máquina local.</li>
+ <li>O conteúdo de cada tabela está delimitado por essas duas tags: <strong><code><a href="/en-US/docs/Web/HTML/Element/table">&lt;table&gt;&lt;/table&gt;</a></code></strong>. Adicione isso dentro do corpo do seu HTML.</li>
+ <li>O menor container dentro de uma tabela é uma célula, ao qual é criado é criado por um elemento <strong><code><a href="/en-US/docs/Web/HTML/Element/td">&lt;td&gt;</a></code></strong>  ('td' significa 'table data'). Adicione o seguinte dentro das tags de suas tabelas:
+  <pre class="brush: html notranslate">&lt;td&gt;Oi, Eu estou em sua primeira célula.&lt;/td&gt;</pre>
  </li>
- <li>If we want a row of four cells, we need to copy these tags three times. Update the contents of your table to look like so:
-  <pre class="brush: html notranslate">&lt;td&gt;Hi, I'm your first cell.&lt;/td&gt;
-&lt;td&gt;I'm your second cell.&lt;/td&gt;
-&lt;td&gt;I'm your third cell.&lt;/td&gt;
-&lt;td&gt;I'm your fourth cell.&lt;/td&gt;</pre>
+ <li>Se nós queremos uma linha dentro de quatro células, nós precisamos copiar estas tags três vezes. Atualize o conteúdo de sua tabela para ficar assim:
+  <pre class="brush: html notranslate">&lt;td&gt;Oi, Eu sou sua primeira célula.&lt;/td&gt;
+&lt;td&gt;Eu sou sua segunda célula.&lt;/td&gt;
+&lt;td&gt;Eu sou sua terceira célula.&lt;/td&gt;
+&lt;td&gt;Eu sou sua quarta célula.&lt;/td&gt;</pre>
  </li>
 </ol>
 
-<p>As you will see, the cells are not placed underneath each other, rather they are automatically aligned with each other on the same row. Each <code>&lt;td&gt;</code> element creates a single cell and together they make up the first row. Every cell we add makes the row grow longer.</p>
+<p>COmo você pode ver, as célular não são colocadas uma embaixo da outra, ao invés disso elas são automaticamente alinhadas entre si na mesma linha. Cada elemento <code>&lt;td&gt;</code> cria uma única célula e juntas elas formam a primeira linha. Cada célula que nós adicionamos faz a linha crescer.</p>
 
-<p>To stop this row from growing and start placing subsequent cells on a second row, we need to use the <strong><code><a href="/en-US/docs/Web/HTML/Element/tr">&lt;tr&gt;</a></code></strong> element ('tr' stands for 'table row'). Let's investigate this now.</p>
+<p>Para que a linha pare de crescer e seja iniciada uma segunda linha com célular subsequentes, nós precisar usar o elemento <strong><code><a href="/en-US/docs/Web/HTML/Element/tr">&lt;tr&gt;</a></code></strong> ('tr' que significa 'table row'). Vamos analisar seu comportamento agora.</p>
 
 <ol>
- <li>Place the four cells you've already created inside <code>&lt;tr&gt;</code> tags, like so:
+ <li>Coloque as quatro células que você criou previamente dentro das tags <code>&lt;tr&gt;</code>, algo como:
 
   <pre class="brush: html notranslate">&lt;tr&gt;
-  &lt;td&gt;Hi, I'm your first cell.&lt;/td&gt;
-  &lt;td&gt;I'm your second cell.&lt;/td&gt;
-  &lt;td&gt;I'm your third cell.&lt;/td&gt;
-  &lt;td&gt;I'm your fourth cell.&lt;/td&gt;
+  &lt;td&gt;Oi, Eu sou sua primeira célula.&lt;/td&gt;
+  &lt;td&gt;Eu sou sua segunda célula.&lt;/td&gt;
+  &lt;td&gt;Eu sou sua terceira célula.&lt;/td&gt;
+  &lt;td&gt;Eu sou sua quarta célula.&lt;/td&gt;
 &lt;/tr&gt;</pre>
  </li>
- <li>Now you've made one row, have a go at making one or two more — each row needs to be wrapped in an additional <code>&lt;tr&gt;</code> element, with each cell contained in a <code>&lt;td&gt;</code>.</li>
+ <li>Agora nós fizemos uma linha, agora vá e faça mais uma ou duas — cada linha precisa estar dentro de um elemento <code>&lt;tr&gt;</code> , com cada célula contendo uma <code>&lt;td&gt;</code>.</li>
 </ol>
 
-<p>This should result in a table that looks something like the following:</p>
+<p>Isto deve resultar em uma tabela parecida com algo a seguir:</p>
 
 <table>
  <tbody>
   <tr>
-   <td>Hi, I'm your first cell.</td>
-   <td>I'm your second cell.</td>
-   <td>I'm your third cell.</td>
-   <td>I'm your fourth cell.</td>
+   <td>Oi, Eu sou sua primeira célula.</td>
+   <td>Eu sou sua segunda célula.</td>
+   <td>Eu sou sua terceira célula.</td>
+   <td>Eu sou sua quarta célula.</td>
   </tr>
   <tr>
-   <td>Second row, first cell.</td>
-   <td>Cell 2.</td>
-   <td>Cell 3.</td>
-   <td>Cell 4.</td>
+   <td>Segunda linha, primeira célula.</td>
+   <td>Célula 2.</td>
+   <td>Célula 3.</td>
+   <td>Célula 4.</td>
   </tr>
  </tbody>
 </table>
